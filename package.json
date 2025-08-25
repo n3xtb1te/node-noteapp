@@ -3,16 +3,25 @@
   "version": "0.0.1",
   "description": "Node.js Note Taking Application",
   "main": "app.ts",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/n3xtb1te/node-noteapp.git"
+  },
+  "homepage": "https://github.com/n3xtb1te/node-noteapp",
   "type": "module",
   "scripts": {
     "start": "node app.js",
     "list": "node app.js list"
   },
-  "author": "n3xtb1te",
+  "author": "n3xtb1te <168577163+n3xtb1te@users.noreply.github.com>",
   "license": "MIT",
+  "keywords": [
+    "note",
+    "note application"
+  ],
   "devDependencies": {
     "@biomejs/biome": "2.1.4",
-    "@types/node": "^24.2.1",
-    "typescript": "^5.9.2"
+    "@types/node": "24.2.1",
+    "typescript": "5.9.2"
   }
 }
