@@ -1,13 +1,59 @@
 {
   "compilerOptions": {
-    "target": "ES2020",
-    "module": "ES2020",
-    "rootDir": "./src",
-    "outDir": "./dist",
-    "moduleResolution": "node",
+    // ============================================================================
+    // TYPE CHECKING
+    // ============================================================================
+    "allowUnreachableCode": false, // biome "noUnreachable" - investigate
+    "allowUnusedLabels": false, // biome "noConfusingLabels" - investigate
+    "exactOptionalPropertyTypes": true,
+    "noFallthroughCasesInSwitch": true, // biome "noFallthroughSwitchClause" - investigate
+    "noImplicitOverride": true,
+    "noImplicitReturns": true,
+    "noUncheckedIndexedAccess": true,
+    "noUnusedLocals": true, // biome "noUnusedVariables" - investigate - preferably remove
+    "noUnusedParameters": true, // biome "noUnusedFunctionParameters" - investigate
     "strict": true,
-    "esModuleInterop": true,
+
+    // ============================================================================
+    // MODULES
+    // ============================================================================
+
+    "allowImportingTsExtensions": true,
+    "baseUrl": "./",
+    "module": "nodenext",
+    "moduleResolution": "nodenext",
+    "paths": {
+      "@helper": ["./src/helper/*"]
+    },
+    "resolveJsonModule": true,
+    "rewriteRelativeImportExtensions": true,
+    "rootDir": "./src",
+
+    // ============================================================================
+    // EMIT
+    // ============================================================================
+
+    "noEmit": true,
+
+    // ============================================================================
+    // JS SUPPORT
+    // ============================================================================
+
+    "allowJs": true,
+    "checkJs": true,
+
+    // ============================================================================
+    // INTEROP CONSTRAINTS
+    // ============================================================================
+
     "forceConsistentCasingInFileNames": true,
-    "skipLibCheck": true
-  }
+    "verbatimModuleSyntax": true,
+
+    // ============================================================================
+    // LANGUAGE AND ENVIRONMENT
+    // ============================================================================
+
+    "target": "esnext"
+  },
+  "include": ["src/**/*", "notes/**/*"]
 }
