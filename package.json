@@ -10,10 +10,11 @@
   "homepage": "https://github.com/n3xtb1te/node-noteapp",
   "type": "module",
   "scripts": {
-    "start": "node app.js",
-    "list": "node app.js list",
+    "start": "npx tsx ./src/app.ts",
+    "list": "npx tsx app.js list",
     "typecheck": "tsc",
-    "lint": "biome lint"
+    "lint": "biome lint",
+    "check": "npx tsx ./src/app.ts"
   },
   "author": "n3xtb1te <168577163+n3xtb1te@users.noreply.github.com>",
   "license": "MIT",
@@ -24,6 +25,7 @@
   "devDependencies": {
     "@biomejs/biome": "2.1.4",
     "@types/node": "24.2.1",
+    "tsx": "4.20.5",
     "typescript": "5.9.2"
   }
 }

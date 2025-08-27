@@ -26,7 +26,6 @@
       "@utils/*": ["./src/utils/*"]
     },
     "resolveJsonModule": true,
-    "rewriteRelativeImportExtensions": false,
     "rootDir": "./src",
 
     // ============================================================================
