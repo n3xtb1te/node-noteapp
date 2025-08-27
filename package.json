@@ -11,7 +11,9 @@
   "type": "module",
   "scripts": {
     "start": "node app.js",
-    "list": "node app.js list"
+    "list": "node app.js list",
+    "typecheck": "tsc",
+    "lint": "biome lint"
   },
   "author": "n3xtb1te <168577163+n3xtb1te@users.noreply.github.com>",
   "license": "MIT",
