@@ -23,10 +23,10 @@
     "module": "nodenext",
     "moduleResolution": "nodenext",
     "paths": {
-      "@helper": ["./src/helper/*"]
+      "@utils/*": ["./src/utils/*"]
     },
     "resolveJsonModule": true,
-    "rewriteRelativeImportExtensions": true,
+    "rewriteRelativeImportExtensions": false,
     "rootDir": "./src",
 
     // ============================================================================
