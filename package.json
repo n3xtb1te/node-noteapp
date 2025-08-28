@@ -11,10 +11,8 @@
   "type": "module",
   "scripts": {
     "start": "npx tsx ./src/app.ts",
-    "list": "npx tsx app.js list",
     "typecheck": "tsc",
-    "lint": "biome lint",
-    "check": "npx tsx ./src/app.ts"
+    "lint": "biome lint"
   },
   "author": "n3xtb1te <168577163+n3xtb1te@users.noreply.github.com>",
   "license": "MIT",

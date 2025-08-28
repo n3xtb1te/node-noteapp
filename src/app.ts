@@ -14,11 +14,11 @@ const addNote = (note: Note) => {
   }
 };
 
-const readNotes = () => {
+const listNotes = () => {
   if (existsSync(PATH)) {
     const items = readHelper(PATH);
     for (const item of items) {
-      console.log(`Title: ${item.title}\nDescription: ${item.description}`);
+      console.log(` • ${item.title}`);
     }
   } else {
     console.warn('No such file.');
@@ -58,19 +58,33 @@ const entryPoint = () => {
   const args = process.argv;
   switch (args[2]) {
     case 'list':
-      readNotes();
+      listNotes();
       break;
     case 'read':
-      readNote(args[3]);
+      if (args[3]) {
+        readNote(args[3]);
+      } else {
+        console.warn('Error: Title is required for read command.');
+      }
       break;
     case 'add':
-      addNote(args[3], args[4]);
+      if (args[3] && args[4]) {
+        addNote(prepareData(args[3], args[4]));
+      } else {
+        console.warn(
+          'Error: Title and description are required for add command.',
+        );
+      }
       break;
     case 'remove':
-      removeNote(args[3]);
+      if (args[3]) {
+        removeNote(args[3]);
+      } else {
+        console.warn('Error: Title is required for remove command.');
+      }
       break;
     default:
-      console.log('No such command.');
+      console.warn('No such command.');
       break;
   }
 };
