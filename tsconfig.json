@@ -3,15 +3,15 @@
     // ============================================================================
     // TYPE CHECKING
     // ============================================================================
-    "allowUnreachableCode": false, // biome "noUnreachable" - investigate
-    "allowUnusedLabels": false, // biome "noConfusingLabels" - investigate
+    "allowUnreachableCode": false,
+    "allowUnusedLabels": false,
     "exactOptionalPropertyTypes": true,
-    "noFallthroughCasesInSwitch": true, // biome "noFallthroughSwitchClause" - investigate
+    "noFallthroughCasesInSwitch": true,
     "noImplicitOverride": true,
     "noImplicitReturns": true,
     "noUncheckedIndexedAccess": true,
-    "noUnusedLocals": true, // biome "noUnusedVariables" - investigate - preferably remove
-    "noUnusedParameters": true, // biome "noUnusedFunctionParameters" - investigate
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
     "strict": true,
 
     // ============================================================================
@@ -23,6 +23,7 @@
     "module": "nodenext",
     "moduleResolution": "nodenext",
     "paths": {
+      "@src/*": ["./src/*"],
       "@utils/*": ["./src/utils/*"]
     },
     "resolveJsonModule": true,
