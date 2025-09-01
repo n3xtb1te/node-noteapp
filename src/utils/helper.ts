@@ -1,10 +1,15 @@
 import { existsSync, readFileSync, writeFileSync } from 'node:fs';
-import { PATH } from '@utils/constants.ts';
+import { ERROR, PATH, WARNING } from '@utils/constants.ts';
 import type { Note } from '@utils/types.ts';
-import { chalkStderr } from 'chalk';
+import { v7 as uuidv7 } from 'uuid';
 
-export const prepareData = (title: string, description: string): Note => {
+export const prepareData = (
+  id: string,
+  title: string,
+  description: string,
+): Note => {
   return {
+    id,
     title,
     description,
   };
@@ -12,13 +17,13 @@ export const prepareData = (title: string, description: string): Note => {
 
 export const loadNotes = () => {
   if (!existsSync(PATH)) {
-    console.log(warning('No such file.'));
+    console.log(WARNING('No such file.'));
     return [];
   }
   try {
     return JSON.parse(readFileSync(PATH, 'utf-8')) as Note[];
   } catch {
-    console.log(error('Notes file is broken.'));
+    console.log(ERROR('Notes file is broken.'));
     return [];
   }
 };
@@ -27,7 +32,4 @@ export const saveNotes = (notes: Note[]) => {
   writeFileSync(PATH, JSON.stringify(notes, null, 2));
 };
 
-export const regular = chalkStderr.bold.green;
-export const info = chalkStderr.bold.blue;
-export const warning = chalkStderr.bold.yellow;
-export const error = chalkStderr.bold.red;
+export const generateUUID = () => uuidv7();
