@@ -6,7 +6,7 @@ import dedent from 'dedent';
 export const addNote = async (note: Note) => {
   const notes = await loadNotes();
   notes.push(note);
-  saveNotes(notes);
+  await saveNotes(notes);
 };
 
 export const listNotes = async () => {

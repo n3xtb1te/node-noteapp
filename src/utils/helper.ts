@@ -16,12 +16,16 @@ export const prepareData = (title: string, description: string): Note => {
 };
 
 export const loadNotes = async () => {
-  if (!fileExists(PATH)) {
+  if (!(await fileExists(PATH))) {
     console.log(WARNING('No such file.'));
     return [];
   }
   try {
-    return JSON.parse(await readFile(PATH, 'utf-8')) as Note[];
+    return (JSON.parse(await readFile(PATH, 'utf-8')) as Note[]).map((n) => ({
+      ...n,
+      createdAt: new Date(n.createdAt),
+      updatedAt: new Date(n.updatedAt),
+    }));
   } catch {
     console.log(ERROR('Notes file is broken.'));
     return [];
