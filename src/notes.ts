@@ -56,5 +56,20 @@ export const removeNoteById = async (id: string) => {
 
 export const searchNote = async (input: string) => {
   const notes = await loadNotes();
-  const note = notes;
+  const searchInput = input.toLowerCase();
+  const filteredNotes = notes.filter(
+    (n) =>
+      n.title.toLowerCase().includes(searchInput) ||
+      n.description.toLowerCase().includes(searchInput),
+  );
+  filteredNotes.forEach((n) =>
+    console.log(
+      REGULAR(
+        dedent(`
+     Title: ${n.title}
+     Description: ${n.description}
+      `),
+      ),
+    ),
+  );
 };
