@@ -4,15 +4,14 @@ import { ERROR, PATH, WARNING } from '@utils/constants.ts';
 import type { Note } from '@utils/types.ts';
 import { v7 as uuidv7 } from 'uuid';
 
-export const prepareData = (
-  id: string,
-  title: string,
-  description: string,
-): Note => {
+export const prepareData = (title: string, description: string): Note => {
+  const now = new Date();
   return {
-    id,
+    id: generateUUID(),
     title,
     description,
+    createdAt: now,
+    updatedAt: now,
   };
 };
 

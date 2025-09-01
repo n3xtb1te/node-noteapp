@@ -7,7 +7,7 @@ import {
   searchNote,
 } from '@src/notes.ts';
 import { ERROR, INFO, WARNING } from '@utils/constants.ts';
-import { generateUUID, prepareData } from '@utils/helper.ts';
+import { prepareData } from '@utils/helper.ts';
 import dedent from 'dedent';
 
 const [, , command, title, ...descriptionParts] = process.argv;
@@ -27,7 +27,7 @@ const entryPoint = () => {
       break;
     case 'add':
       if (title && description) {
-        addNote(prepareData(generateUUID(), title, description));
+        addNote(prepareData(title, description));
       } else {
         console.log(
           ERROR('Error: Title and description are required for add command.'),
