@@ -19,7 +19,6 @@
     // ============================================================================
 
     "allowImportingTsExtensions": true,
-    "baseUrl": "./",
     "module": "nodenext",
     "moduleResolution": "nodenext",
     "paths": {
